@@ -1,10 +1,10 @@
-version: '3.7'
+version: "3.7"
 services:
   app:
     build: .
     tty: true
     ports:
-      - 3005:3005
+      - 3000:3000
       - 5555:5555
     volumes:
       - .:/app
@@ -12,7 +12,7 @@ services:
     depends_on:
       - db
   db:
-    build: 
+    build:
       context: "."
       dockerfile: "db.Dockerfile"
     restart: always
